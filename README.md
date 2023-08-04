@@ -25,10 +25,25 @@
 
 ## Installation
 
-frolic-react can be installed directly through npm.
+`frolic-react` can be installed directly through npm.
 
 ```
 npm i frolic-react
+```
+
+In your `tailwind.config.js`, add the following code:
+
+```tsx
+module.exports = {
+  content: [
+    ...
+    'node_modules/frolic-react/**/*.{js,ts,jsx,tsx}',
+  ],
+  ...
+  plugins: [
+    require('frolic-react'),
+  ],
+}
 ```
 
 ## Usage
