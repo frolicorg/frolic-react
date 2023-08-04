@@ -28,7 +28,7 @@ const BarChart: React.FC<BarChartProps> = ({
         <Legend />
 
         {metrics.map((metric, index) => (
-          <Bar dataKey={metric} fill={colors[index % colors.length]} />
+          <Bar dataKey={metric} key={index} fill={colors[index % colors.length]} />
         ))}
 
       </RBarChart>

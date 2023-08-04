@@ -29,7 +29,7 @@ const ScatterChart: React.FC<ScatterChartProps> = ({
         <Legend />
 
         {metrics.map((metric, index) => (
-          <Scatter name={metric} dataKey={metric} fill={colors[index % colors.length]} />
+          <Scatter key={index} name={metric} dataKey={metric} fill={colors[index % colors.length]} />
         ))}
 
       </RScatterChart>

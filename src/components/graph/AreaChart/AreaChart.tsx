@@ -28,7 +28,7 @@ const AreaChart: React.FC<AreaChartProps> = ({
         <Legend />
 
         {metrics.map((metric, index) => (
-          <Area type="monotone" dataKey={metric} fill={colors[index % colors.length]} stroke={colors[index % colors.length]} />
+          <Area type="monotone" key={index} dataKey={metric} fill={colors[index % colors.length]} stroke={colors[index % colors.length]} />
         ))}
 
       </RAreaChart>
