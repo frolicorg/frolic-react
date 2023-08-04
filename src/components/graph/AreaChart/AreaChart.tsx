@@ -28,7 +28,7 @@ const AreaChart: React.FC<AreaChartProps> = ({
           <XAxis dataKey={dimensions[0]} />
           <YAxis />
           <Tooltip />
-          <Legend />
+          <Legend iconType="circle" />
 
           {metrics.map((metric, index) => (
             <Area type="monotone" key={index} dataKey={metric} fill={colors[index % colors.length]} stroke={colors[index % colors.length]} />

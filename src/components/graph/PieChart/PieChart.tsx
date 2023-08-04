@@ -42,7 +42,7 @@ const PieChart: React.FC<PieChartProps> = ({
           </Pie>
 
           <Tooltip />
-          <Legend />
+          <Legend iconType="circle" />
         </RPieChart>
       </ResponsiveContainer>
     </div>

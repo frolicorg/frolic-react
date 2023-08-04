@@ -27,7 +27,7 @@ const BarChart: React.FC<BarChartProps> = ({
           <XAxis dataKey={dimensions[0]} />
           <YAxis />
           <Tooltip />
-          <Legend />
+          <Legend iconType="circle" />
 
           {metrics.map((metric, index) => (
             <Bar dataKey={metric} key={index} fill={colors[index % colors.length]} />

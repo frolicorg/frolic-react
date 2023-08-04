@@ -58,7 +58,7 @@ const BubbleChart: React.FC<BubbleChartProps> = ({
           <YAxis dataKey={yDimension} />
           <ZAxis dataKey={dataKey} domain={domain} range={range} />
           <Tooltip />
-          <Legend />
+          <Legend iconType="circle" />
 
           {metrics.map((metric, index) => (
             <Scatter key={index} name={metric} dataKey={metric} fill={colors[index % colors.length]} />

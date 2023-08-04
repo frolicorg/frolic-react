@@ -28,7 +28,7 @@ const ScatterChart: React.FC<ScatterChartProps> = ({
           <XAxis dataKey={xDimension} />
           <YAxis dataKey={yDimension} />
           <Tooltip />
-          <Legend />
+          <Legend iconType="circle" />
 
           {metrics.map((metric, index) => (
             <Scatter key={index} name={metric} dataKey={metric} fill={colors[index % colors.length]} />
