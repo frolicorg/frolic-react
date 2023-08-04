@@ -7,32 +7,36 @@ const AreaChart: React.FC<AreaChartProps> = ({
   data,
   metrics,
   dimensions,
+  className = "w-full h-80",
   colors = DivergentColorPallete,
   ...props
 }) => {
   return (
-    <ResponsiveContainer width="100%" height="100%">
-      <RAreaChart
-        data={data}
-        margin={{
-          top: 10,
-          right: 30,
-          left: 20,
-          bottom: 15,
-        }}
-      >
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey={dimensions[0]} />
-        <YAxis />
-        <Tooltip />
-        <Legend />
+    <div className={className}>
 
-        {metrics.map((metric, index) => (
-          <Area type="monotone" key={index} dataKey={metric} fill={colors[index % colors.length]} stroke={colors[index % colors.length]} />
-        ))}
+      <ResponsiveContainer width="100%" height="100%">
+        <RAreaChart
+          data={data}
+          margin={{
+            top: 10,
+            right: 30,
+            left: 20,
+            bottom: 15,
+          }}
+        >
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey={dimensions[0]} />
+          <YAxis />
+          <Tooltip />
+          <Legend />
 
-      </RAreaChart>
-    </ResponsiveContainer>
+          {metrics.map((metric, index) => (
+            <Area type="monotone" key={index} dataKey={metric} fill={colors[index % colors.length]} stroke={colors[index % colors.length]} />
+          ))}
+
+        </RAreaChart>
+      </ResponsiveContainer>
+    </div>
   );
 };
 

@@ -2,6 +2,7 @@ export interface ChartInterface {
     data: any[];
     dimensions: string[];
     metrics: string[];
+    className?: string;
     colors?: string[];
 }
 
@@ -10,5 +11,6 @@ export interface ScatterChartInterface {
     metrics: string[];
     xKey: string;
     yKey: string;
+    className?: string;
     colors?: string[];
 }

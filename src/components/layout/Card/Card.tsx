@@ -3,6 +3,7 @@ import { CardProps } from "./Card.types";
 
 const Card: React.FC<CardProps> = ({
   title,
+  className,
   children,
   ...props
 }) => {

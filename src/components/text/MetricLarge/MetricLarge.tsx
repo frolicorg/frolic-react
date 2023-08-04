@@ -2,6 +2,7 @@ import React, { ReactNode } from "react";
 import { MetricLargeProps } from "./MetricLarge.types";
 
 const MetricLarge: React.FC<MetricLargeProps> = ({
+  className,
   value,
   ...props
 }) => {

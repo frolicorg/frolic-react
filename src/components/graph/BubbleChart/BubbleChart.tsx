@@ -9,6 +9,7 @@ const BubbleChart: React.FC<BubbleChartProps> = ({
   xKey: xDimension,
   yKey: yDimension,
   dataKey,
+  className = "w-full h-80",
   colors = DivergentColorPallete,
   ...props
 }) => {
@@ -41,29 +42,31 @@ const BubbleChart: React.FC<BubbleChartProps> = ({
   }
 
   return (
-    <ResponsiveContainer width="100%" height="100%">
-      <RScatterChart
-        data={data}
-        margin={{
-          top: 10,
-          right: 30,
-          left: 20,
-          bottom: 15,
-        }}
-      >
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey={xDimension} />
-        <YAxis dataKey={yDimension} />
-        <ZAxis dataKey={dataKey} domain={domain} range={range} />
-        <Tooltip />
-        <Legend />
+    <div className={className}>
+      <ResponsiveContainer width="100%" height="100%">
+        <RScatterChart
+          data={data}
+          margin={{
+            top: 10,
+            right: 30,
+            left: 20,
+            bottom: 15,
+          }}
+        >
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey={xDimension} />
+          <YAxis dataKey={yDimension} />
+          <ZAxis dataKey={dataKey} domain={domain} range={range} />
+          <Tooltip />
+          <Legend />
 
-        {metrics.map((metric, index) => (
-          <Scatter key={index} name={metric} dataKey={metric} fill={colors[index % colors.length]} />
-        ))}
+          {metrics.map((metric, index) => (
+            <Scatter key={index} name={metric} dataKey={metric} fill={colors[index % colors.length]} />
+          ))}
 
-      </RScatterChart>
-    </ResponsiveContainer>
+        </RScatterChart>
+      </ResponsiveContainer>
+    </div>
   );
 };
 

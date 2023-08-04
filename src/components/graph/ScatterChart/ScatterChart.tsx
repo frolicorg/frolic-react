@@ -8,32 +8,35 @@ const ScatterChart: React.FC<ScatterChartProps> = ({
   metrics,
   xKey: xDimension,
   yKey: yDimension,
+  className = "w-full h-80",
   colors = DivergentColorPallete,
   ...props
 }) => {
   return (
-    <ResponsiveContainer width="100%" height="100%">
-      <RScatterChart
-        data={data}
-        margin={{
-          top: 10,
-          right: 30,
-          left: 20,
-          bottom: 15,
-        }}
-      >
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey={xDimension} />
-        <YAxis dataKey={yDimension} />
-        <Tooltip />
-        <Legend />
+    <div className={className}>
+      <ResponsiveContainer width="100%" height="100%">
+        <RScatterChart
+          data={data}
+          margin={{
+            top: 10,
+            right: 30,
+            left: 20,
+            bottom: 15,
+          }}
+        >
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey={xDimension} />
+          <YAxis dataKey={yDimension} />
+          <Tooltip />
+          <Legend />
 
-        {metrics.map((metric, index) => (
-          <Scatter key={index} name={metric} dataKey={metric} fill={colors[index % colors.length]} />
-        ))}
+          {metrics.map((metric, index) => (
+            <Scatter key={index} name={metric} dataKey={metric} fill={colors[index % colors.length]} />
+          ))}
 
-      </RScatterChart>
-    </ResponsiveContainer>
+        </RScatterChart>
+      </ResponsiveContainer>
+    </div>
   );
 };
 

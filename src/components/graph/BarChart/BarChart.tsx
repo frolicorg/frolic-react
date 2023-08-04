@@ -7,32 +7,35 @@ const BarChart: React.FC<BarChartProps> = ({
   data,
   metrics,
   dimensions,
+  className = "w-full h-80",
   colors = DivergentColorPallete,
   ...props
 }) => {
   return (
-    <ResponsiveContainer width="100%" height="100%">
-      <RBarChart
-        data={data}
-        margin={{
-          top: 10,
-          right: 30,
-          left: 20,
-          bottom: 15,
-        }}
-      >
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey={dimensions[0]} />
-        <YAxis />
-        <Tooltip />
-        <Legend />
+    <div className={className}>
+      <ResponsiveContainer width="100%" height="100%">
+        <RBarChart
+          data={data}
+          margin={{
+            top: 10,
+            right: 30,
+            left: 20,
+            bottom: 15,
+          }}
+        >
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey={dimensions[0]} />
+          <YAxis />
+          <Tooltip />
+          <Legend />
 
-        {metrics.map((metric, index) => (
-          <Bar dataKey={metric} key={index} fill={colors[index % colors.length]} />
-        ))}
+          {metrics.map((metric, index) => (
+            <Bar dataKey={metric} key={index} fill={colors[index % colors.length]} />
+          ))}
 
-      </RBarChart>
-    </ResponsiveContainer>
+        </RBarChart>
+      </ResponsiveContainer>
+    </div>
   );
 };
 

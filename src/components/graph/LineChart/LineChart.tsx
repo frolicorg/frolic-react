@@ -7,34 +7,37 @@ const LineChart: React.FC<LineChartProps> = ({
   data,
   metrics,
   dimensions,
+  className = "w-full h-80",
   colors = DivergentColorPallete,
   ...props
 }) => {
   return (
-    <ResponsiveContainer width="100%" height="100%">
-      <RLineChart
-        data={data}
-        margin={{
-          top: 10,
-          right: 30,
-          left: 20,
-          bottom: 15,
-        }}
-      >
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey={dimensions[0]} />
-        <YAxis />
-        <Tooltip />
-        <Legend />
+    <div className={className}>
+      <ResponsiveContainer width="100%" height="100%">
+        <RLineChart
+          data={data}
+          margin={{
+            top: 10,
+            right: 30,
+            left: 20,
+            bottom: 15,
+          }}
+        >
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey={dimensions[0]} />
+          <YAxis />
+          <Tooltip />
+          <Legend />
 
-        {metrics.map((metric, index) => (
-          <>
-            <Line key={index} dataKey={metric} stroke={colors[index % colors.length]} activeDot={{ r: 4 }} />
-          </>
-        ))}
+          {metrics.map((metric, index) => (
+            <>
+              <Line key={index} dataKey={metric} stroke={colors[index % colors.length]} activeDot={{ r: 4 }} />
+            </>
+          ))}
 
-      </RLineChart>
-    </ResponsiveContainer>
+        </RLineChart>
+      </ResponsiveContainer>
+    </div>
   );
 };
 

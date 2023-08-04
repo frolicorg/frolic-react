@@ -3,6 +3,7 @@ import { MetricIncrementProps } from "./MetricIncrement.types";
 import { ArrowTrendingUpIcon, ArrowTrendingDownIcon } from '@heroicons/react/24/outline';
 
 const MetricIncrement: React.FC<MetricIncrementProps> = ({
+  className,
   value,
   percentage,
   description: description,

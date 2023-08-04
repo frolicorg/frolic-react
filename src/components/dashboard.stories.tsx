@@ -76,8 +76,9 @@ export const Primary: Story<AreaChartProps> = (args: AreaChartProps) => (
         </div>
 
         <br></br>
-        <div className="h-96 flex flex-row gap-5">
+        <div className="grid grid-cols-2 gap-5">
             <Card title="Line Chart">
+                <MetricLarge value={100}></MetricLarge>
                 <LineChart data={data} metrics={["uv", "pv", "amt"]} dimensions={["name"]}></LineChart>
             </Card>
             <Card title="Bar Chart">
@@ -86,7 +87,7 @@ export const Primary: Story<AreaChartProps> = (args: AreaChartProps) => (
         </div>
 
         <br></br>
-        <div className="h-96 flex flex-row gap-5">
+        <div className="grid grid-cols-2 gap-5">
             <Card title="Area Chart">
                 <AreaChart data={data} metrics={["uv", "pv", "amt"]} dimensions={["name"]}></AreaChart>
             </Card>
@@ -96,7 +97,7 @@ export const Primary: Story<AreaChartProps> = (args: AreaChartProps) => (
         </div>
 
         <br></br>
-        <div className="h-96 flex flex-row gap-5">
+        <div className="grid grid-cols-2 gap-5">
             <Card title="Scatter Chart">
                 <ScatterChart data={data} metrics={["uv", "pv", "amt"]} xKey={"uv"} yKey={"pv"}></ScatterChart>
             </Card>
