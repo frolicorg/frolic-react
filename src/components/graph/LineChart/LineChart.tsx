@@ -29,7 +29,7 @@ const LineChart: React.FC<LineChartProps> = ({
 
         {metrics.map((metric, index) => (
           <>
-            <Line type="monotone" key={index} dataKey={metric} stroke={colors[index % colors.length]} activeDot={{ r: 4 }} />
+            <Line key={index} dataKey={metric} stroke={colors[index % colors.length]} activeDot={{ r: 4 }} />
           </>
         ))}
 
