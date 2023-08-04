@@ -9,6 +9,7 @@ import LineChart from "./graph/LineChart/LineChart";
 import BarChart from "./graph/BarChart/BarChart";
 import ScatterChart from "./graph/ScatterChart/ScatterChart";
 import BubbleChart from "./graph/BubbleChart/BubbleChart";
+import PieChart from "./graph/PieChart/PieChart";
 
 const meta: Meta<typeof AreaChart> = {
     component: AreaChart,
@@ -103,6 +104,14 @@ export const Primary: Story<AreaChartProps> = (args: AreaChartProps) => (
             </Card>
             <Card title="Bubble Chart">
                 <BubbleChart data={data} metrics={["uv", "pv", "amt"]} xKey={"uv"} yKey={"pv"} dataKey={"amt"}></BubbleChart>
+            </Card>
+        </div>
+
+
+        <br></br>
+        <div className="grid grid-cols-2 gap-5">
+            <Card title="Pie Chart">
+                <PieChart data={data} metrics={["uv"]} dimensions={["name"]}></PieChart>
             </Card>
         </div>
     </>
