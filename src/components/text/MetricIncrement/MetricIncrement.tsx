@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react";
 import { MetricIncrementProps } from "./MetricIncrement.types";
-import { ArrowUpIcon, ArrowDownIcon } from '@heroicons/react/outline';
+import { ArrowTrendingUpIcon, ArrowTrendingDownIcon } from '@heroicons/react/24/outline';
 
 const MetricIncrement: React.FC<MetricIncrementProps> = ({
   value,
@@ -13,16 +13,16 @@ const MetricIncrement: React.FC<MetricIncrementProps> = ({
       {
         value! >= 0 ?
           <>
-            <ArrowUpIcon width={15} height={15} className="text-green-600"></ArrowUpIcon>
+            <ArrowTrendingUpIcon width={15} height={15} className="text-green-600"></ArrowTrendingUpIcon>
           </>
           :
           <>
-            <ArrowDownIcon width={15} height={15} className="text-red-600"></ArrowDownIcon>
+            <ArrowTrendingDownIcon width={15} height={15} className="text-red-600"></ArrowTrendingDownIcon>
           </>
       }
 
       {
-        value! && <>{value}</>
+        value! && <>&nbsp;{value}</>
       }
 
       {

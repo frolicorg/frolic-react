@@ -1,6 +1,6 @@
 {
   "name": "frolic-react",
-  "version": "1.0.2",
+  "version": "1.0.8",
   "description": "React Library to Build Analytics Dashboard 10x Faster",
   "scripts": {
     "prebuild": "rm -rf dist",
@@ -34,7 +34,7 @@
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-react": "^7.16.7",
     "@babel/preset-typescript": "^7.16.7",
-    "@heroicons/react": "^1.0.6",
+    "@heroicons/react": "^2.0.18",
     "@mdx-js/react": "^2.2.1",
     "@rollup/plugin-commonjs": "^21.1.0",
     "@rollup/plugin-node-resolve": "^13.2.1",
@@ -93,5 +93,10 @@
   "types": "dist/index.d.ts",
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "keywords": [
+    "frolic",
+    "dashboard",
+    "tailwind"
+  ]
 }
