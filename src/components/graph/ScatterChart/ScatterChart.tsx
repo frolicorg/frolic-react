@@ -1,7 +1,8 @@
 import React from "react";
 import { ScatterChartProps } from "./ScatterChart.types";
 import { CartesianGrid, Legend, Scatter, ResponsiveContainer, Tooltip, XAxis, YAxis, ScatterChart as RScatterChart } from "recharts";
-import { QualitativeColorPallete } from "components/utils/DefaultParemeters";
+import { DefaultMargins, QualitativeColorPallete } from "components/utils/DefaultParemeters";
+import { numericValueFormatter } from "components/utils/AxisFormatter";
 
 const ScatterChart: React.FC<ScatterChartProps> = ({
   data,
@@ -10,6 +11,7 @@ const ScatterChart: React.FC<ScatterChartProps> = ({
   yKey: yDimension,
   className = "w-full h-80",
   colors = QualitativeColorPallete,
+  margin = DefaultMargins,
   ...props
 }) => {
   return (
@@ -17,16 +19,11 @@ const ScatterChart: React.FC<ScatterChartProps> = ({
       <ResponsiveContainer width="100%" height="100%">
         <RScatterChart
           data={data}
-          margin={{
-            top: 10,
-            right: 30,
-            left: 20,
-            bottom: 15,
-          }}
+          margin={margin}
         >
           <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey={xDimension} />
-          <YAxis dataKey={yDimension} />
+          <XAxis dataKey={xDimension} tickFormatter={numericValueFormatter} />
+          <YAxis dataKey={yDimension} tickFormatter={numericValueFormatter} />
           <Tooltip />
           <Legend iconType="circle" />
 

@@ -1,7 +1,8 @@
 import React from "react";
 import { BubbleChartProps } from "./BubbleChart.types";
 import { CartesianGrid, Legend, Scatter, ResponsiveContainer, Tooltip, XAxis, YAxis, ScatterChart as RScatterChart, ZAxis } from "recharts";
-import { QualitativeColorPallete } from "components/utils/DefaultParemeters";
+import { DefaultMargins, QualitativeColorPallete } from "components/utils/DefaultParemeters";
+import { numericValueFormatter } from "components/utils/AxisFormatter";
 
 const BubbleChart: React.FC<BubbleChartProps> = ({
   data,
@@ -11,6 +12,7 @@ const BubbleChart: React.FC<BubbleChartProps> = ({
   dataKey,
   className = "w-full h-80",
   colors = QualitativeColorPallete,
+  margin = DefaultMargins,
   ...props
 }) => {
   const range = [16, 225];
@@ -46,16 +48,11 @@ const BubbleChart: React.FC<BubbleChartProps> = ({
       <ResponsiveContainer width="100%" height="100%">
         <RScatterChart
           data={data}
-          margin={{
-            top: 10,
-            right: 30,
-            left: 20,
-            bottom: 15,
-          }}
+          margin={margin}
         >
           <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey={xDimension} />
-          <YAxis dataKey={yDimension} />
+          <XAxis dataKey={xDimension} tickFormatter={numericValueFormatter} />
+          <YAxis dataKey={yDimension} tickFormatter={numericValueFormatter} />
           <ZAxis dataKey={dataKey} domain={domain} range={range} />
           <Tooltip />
           <Legend iconType="circle" />

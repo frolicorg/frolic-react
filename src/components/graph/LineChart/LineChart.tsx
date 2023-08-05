@@ -1,7 +1,8 @@
 import React from "react";
 import { LineChartProps } from "./LineChart.types";
 import { CartesianGrid, Legend, Line, ResponsiveContainer, Tooltip, XAxis, YAxis, LineChart as RLineChart } from "recharts";
-import { QualitativeColorPallete } from "components/utils/DefaultParemeters";
+import { DefaultMargins, QualitativeColorPallete } from "components/utils/DefaultParemeters";
+import { numericValueFormatter } from "components/utils/AxisFormatter";
 
 const LineChart: React.FC<LineChartProps> = ({
   data,
@@ -9,6 +10,7 @@ const LineChart: React.FC<LineChartProps> = ({
   dimensions,
   className = "w-full h-80",
   colors = QualitativeColorPallete,
+  margin = DefaultMargins,
   ...props
 }) => {
   return (
@@ -16,16 +18,11 @@ const LineChart: React.FC<LineChartProps> = ({
       <ResponsiveContainer width="100%" height="100%">
         <RLineChart
           data={data}
-          margin={{
-            top: 10,
-            right: 30,
-            left: 20,
-            bottom: 15,
-          }}
+          margin={margin}
         >
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey={dimensions[0]} />
-          <YAxis />
+          <YAxis tickFormatter={numericValueFormatter} />
           <Tooltip />
           <Legend iconType="circle" />
 

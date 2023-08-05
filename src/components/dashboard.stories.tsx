@@ -79,7 +79,6 @@ export const Primary: Story<AreaChartProps> = (args: AreaChartProps) => (
         <br></br>
         <div className="grid grid-cols-2 gap-5">
             <Card title="Line Chart">
-                <MetricLarge value={100}></MetricLarge>
                 <LineChart data={data} metrics={["uv", "pv", "amt"]} dimensions={["name"]}></LineChart>
             </Card>
             <Card title="Bar Chart">

@@ -1,7 +1,8 @@
 import React from "react";
 import { BarChartProps } from "./BarChart.types";
 import { CartesianGrid, Legend, Bar, ResponsiveContainer, Tooltip, XAxis, YAxis, BarChart as RBarChart } from "recharts";
-import { QualitativeColorPallete } from "components/utils/DefaultParemeters";
+import { DefaultMargins, QualitativeColorPallete } from "components/utils/DefaultParemeters";
+import { numericValueFormatter } from "components/utils/AxisFormatter";
 
 const BarChart: React.FC<BarChartProps> = ({
   data,
@@ -9,6 +10,7 @@ const BarChart: React.FC<BarChartProps> = ({
   dimensions,
   className = "w-full h-80",
   colors = QualitativeColorPallete,
+  margin = DefaultMargins,
   ...props
 }) => {
   return (
@@ -25,7 +27,7 @@ const BarChart: React.FC<BarChartProps> = ({
         >
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey={dimensions[0]} />
-          <YAxis />
+          <YAxis tickFormatter={numericValueFormatter} />
           <Tooltip />
           <Legend iconType="circle" />
 

@@ -1,7 +1,8 @@
 import React from "react";
 import { AreaChartProps } from "./AreaChart.types";
 import { CartesianGrid, Legend, Area, ResponsiveContainer, Tooltip, XAxis, YAxis, AreaChart as RAreaChart } from "recharts";
-import { QualitativeColorPallete } from "components/utils/DefaultParemeters";
+import { DefaultMargins, QualitativeColorPallete } from "components/utils/DefaultParemeters";
+import { numericValueFormatter } from "components/utils/AxisFormatter";
 
 const AreaChart: React.FC<AreaChartProps> = ({
   data,
@@ -9,6 +10,7 @@ const AreaChart: React.FC<AreaChartProps> = ({
   dimensions,
   className = "w-full h-80",
   colors = QualitativeColorPallete,
+  margin = DefaultMargins,
   ...props
 }) => {
   return (
@@ -16,12 +18,7 @@ const AreaChart: React.FC<AreaChartProps> = ({
       <ResponsiveContainer width="100%" height="100%">
         <RAreaChart
           data={data}
-          margin={{
-            top: 10,
-            right: 30,
-            left: 20,
-            bottom: 15,
-          }}
+          margin={margin}
         >
           <defs>
             {QualitativeColorPallete.map((color, index) => (
@@ -34,7 +31,7 @@ const AreaChart: React.FC<AreaChartProps> = ({
 
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey={dimensions[0]} />
-          <YAxis />
+          <YAxis tickFormatter={numericValueFormatter} />
           <Tooltip />
           <Legend iconType="circle" />
 

@@ -4,6 +4,7 @@ export interface ChartInterface {
     metrics: string[];
     className?: string;
     colors?: string[];
+    margin?: Margin;
 }
 
 export interface ScatterChartInterface {
@@ -13,4 +14,12 @@ export interface ScatterChartInterface {
     yKey: string;
     className?: string;
     colors?: string[];
+    margin?: Margin;
+}
+
+interface Margin {
+    top: number,
+    left: number,
+    right: number;
+    bottom: number;
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import { PieChartProps } from "./PieChart.types";
 import { CartesianGrid, Legend, ResponsiveContainer, Tooltip, PieChart as RPieChart, Cell, Pie } from "recharts";
-import { QualitativeColorPallete } from "components/utils/DefaultParemeters";
+import { DefaultMargins, QualitativeColorPallete } from "components/utils/DefaultParemeters";
 
 const PieChart: React.FC<PieChartProps> = ({
   data,
@@ -10,6 +10,7 @@ const PieChart: React.FC<PieChartProps> = ({
   className = "w-full h-80",
   radius = 80,
   colors = QualitativeColorPallete,
+  margin = DefaultMargins,
   ...props
 }) => {
   return (
@@ -17,13 +18,7 @@ const PieChart: React.FC<PieChartProps> = ({
       <ResponsiveContainer width="100%" height="100%">
         <RPieChart
           data={data}
-
-          margin={{
-            top: 10,
-            right: 30,
-            left: 20,
-            bottom: 15,
-          }}
+          margin={margin}
         >
 
           <Pie
