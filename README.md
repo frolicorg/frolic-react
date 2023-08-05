@@ -56,7 +56,7 @@ const data = [
 
 const Page = () => {
   return (
-    <div className="h-96 flex flex-row gap-5">
+    <div className="frid grid-cols-2 gap-5">
       <Card title="Line Chart">
         <LineChart data={data} metrics={["uv", "pv", "amt"]} dimensions={["name"]}></LineChart>
       </Card>
