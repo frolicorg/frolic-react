@@ -5,7 +5,7 @@
 </a>
 </p>
 
-`frolic-react` is an open source react library to build UI for analytics dashboards much faster. You can use `frolic-react` directly with [frolic](https://github.com/frolicorg/frolic) backend service to create full stack dashboards 10x faster.
+`frolic-react` is an open source react library to build UI for analytics dashboards much faster. It is built on top of [react](https://react.dev), [tailwindcss](https://tailwindcss.com) and [recharts](https://recharts.org). You can use `frolic-react` directly with [frolic](https://github.com/frolicorg/frolic) backend service to create full stack dashboards 10x faster.
 
 ![GitHub contributors](https://img.shields.io/github/contributors/frolicorg/frolic-react)
 [![GitHub issues](https://img.shields.io/github/issues/frolicorg/frolic-react)](https://github.com/frolicorg/frolic-react/issues)
