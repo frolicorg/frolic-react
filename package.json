@@ -1,6 +1,6 @@
 {
   "name": "frolic-react",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "React Library to Build Analytics Dashboard 10x Faster",
   "scripts": {
     "prebuild": "rm -rf dist",
