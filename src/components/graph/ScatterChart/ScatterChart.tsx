@@ -2,7 +2,7 @@ import React from "react";
 import { ScatterChartProps } from "./ScatterChart.types";
 import { CartesianGrid, Legend, Scatter, ResponsiveContainer, Tooltip, XAxis, YAxis, ScatterChart as RScatterChart } from "recharts";
 import { DefaultMargins, QualitativeColorPallete } from "components/utils/DefaultParemeters";
-import { numericValueFormatter } from "components/utils/AxisFormatter";
+import { FrolicTooltip, numericValueFormatter } from "components/utils/AxisFormatter";
 
 const ScatterChart: React.FC<ScatterChartProps> = ({
   data,
@@ -24,7 +24,7 @@ const ScatterChart: React.FC<ScatterChartProps> = ({
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey={xDimension} tickFormatter={numericValueFormatter} />
           <YAxis dataKey={yDimension} tickFormatter={numericValueFormatter} />
-          <Tooltip />
+          <Tooltip content={<FrolicTooltip />} />
           <Legend iconType="circle" />
 
           {metrics.map((metric, index) => (

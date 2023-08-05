@@ -2,6 +2,7 @@ import React from "react";
 import { PieChartProps } from "./PieChart.types";
 import { CartesianGrid, Legend, ResponsiveContainer, Tooltip, PieChart as RPieChart, Cell, Pie } from "recharts";
 import { DefaultMargins, QualitativeColorPallete } from "components/utils/DefaultParemeters";
+import { FrolicTooltip } from "components/utils/AxisFormatter";
 
 const PieChart: React.FC<PieChartProps> = ({
   data,
@@ -36,7 +37,7 @@ const PieChart: React.FC<PieChartProps> = ({
             ))}
           </Pie>
 
-          <Tooltip />
+          <Tooltip content={<FrolicTooltip />} />
           <Legend iconType="circle" />
         </RPieChart>
       </ResponsiveContainer>

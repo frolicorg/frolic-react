@@ -3,6 +3,7 @@ import { AreaChartProps } from "./AreaChart.types";
 import { CartesianGrid, Legend, Area, ResponsiveContainer, Tooltip, XAxis, YAxis, AreaChart as RAreaChart } from "recharts";
 import { DefaultMargins, QualitativeColorPallete } from "components/utils/DefaultParemeters";
 import { numericValueFormatter } from "components/utils/AxisFormatter";
+import { FrolicTooltip } from "components/utils/AxisFormatter";
 
 const AreaChart: React.FC<AreaChartProps> = ({
   data,
@@ -32,7 +33,7 @@ const AreaChart: React.FC<AreaChartProps> = ({
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey={dimensions[0]} />
           <YAxis tickFormatter={numericValueFormatter} />
-          <Tooltip />
+          <Tooltip content={<FrolicTooltip />} />
           <Legend iconType="circle" />
 
           {metrics.map((metric, index) => (

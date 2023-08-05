@@ -2,7 +2,7 @@ import React from "react";
 import { BubbleChartProps } from "./BubbleChart.types";
 import { CartesianGrid, Legend, Scatter, ResponsiveContainer, Tooltip, XAxis, YAxis, ScatterChart as RScatterChart, ZAxis } from "recharts";
 import { DefaultMargins, QualitativeColorPallete } from "components/utils/DefaultParemeters";
-import { numericValueFormatter } from "components/utils/AxisFormatter";
+import { FrolicTooltip, numericValueFormatter } from "components/utils/AxisFormatter";
 
 const BubbleChart: React.FC<BubbleChartProps> = ({
   data,
@@ -54,7 +54,7 @@ const BubbleChart: React.FC<BubbleChartProps> = ({
           <XAxis dataKey={xDimension} tickFormatter={numericValueFormatter} />
           <YAxis dataKey={yDimension} tickFormatter={numericValueFormatter} />
           <ZAxis dataKey={dataKey} domain={domain} range={range} />
-          <Tooltip />
+          <Tooltip content={<FrolicTooltip />} />
           <Legend iconType="circle" />
 
           {metrics.map((metric, index) => (

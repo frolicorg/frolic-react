@@ -2,7 +2,7 @@ import React from "react";
 import { BarChartProps } from "./BarChart.types";
 import { CartesianGrid, Legend, Bar, ResponsiveContainer, Tooltip, XAxis, YAxis, BarChart as RBarChart } from "recharts";
 import { DefaultMargins, QualitativeColorPallete } from "components/utils/DefaultParemeters";
-import { numericValueFormatter } from "components/utils/AxisFormatter";
+import { FrolicTooltip, numericValueFormatter } from "components/utils/AxisFormatter";
 
 const BarChart: React.FC<BarChartProps> = ({
   data,
@@ -28,7 +28,7 @@ const BarChart: React.FC<BarChartProps> = ({
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey={dimensions[0]} />
           <YAxis tickFormatter={numericValueFormatter} />
-          <Tooltip />
+          <Tooltip content={<FrolicTooltip />} />
           <Legend iconType="circle" />
 
           {metrics.map((metric, index) => (

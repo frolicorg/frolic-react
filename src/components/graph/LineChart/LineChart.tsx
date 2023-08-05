@@ -2,7 +2,7 @@ import React from "react";
 import { LineChartProps } from "./LineChart.types";
 import { CartesianGrid, Legend, Line, ResponsiveContainer, Tooltip, XAxis, YAxis, LineChart as RLineChart } from "recharts";
 import { DefaultMargins, QualitativeColorPallete } from "components/utils/DefaultParemeters";
-import { numericValueFormatter } from "components/utils/AxisFormatter";
+import { FrolicTooltip, numericValueFormatter } from "components/utils/AxisFormatter";
 
 const LineChart: React.FC<LineChartProps> = ({
   data,
@@ -23,7 +23,7 @@ const LineChart: React.FC<LineChartProps> = ({
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey={dimensions[0]} />
           <YAxis tickFormatter={numericValueFormatter} />
-          <Tooltip />
+          <Tooltip content={<FrolicTooltip />} />
           <Legend iconType="circle" />
 
           {metrics.map((metric, index) => (
