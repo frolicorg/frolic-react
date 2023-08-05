@@ -13,7 +13,6 @@ const AreaChart: React.FC<AreaChartProps> = ({
 }) => {
   return (
     <div className={className}>
-
       <ResponsiveContainer width="100%" height="100%">
         <RAreaChart
           data={data}
@@ -24,6 +23,18 @@ const AreaChart: React.FC<AreaChartProps> = ({
             bottom: 15,
           }}
         >
+
+
+          <defs>
+            {QualitativeColorPallete.map((color, index) => (
+              <linearGradient key={index} id={`color${index}`} x1="0" y1="0" x2="0" y2="1">
+                <stop offset="5%" stopColor={color} stopOpacity={0.8} />
+                <stop offset="95%" stopColor={color} stopOpacity={0} />
+              </linearGradient>
+            ))}
+          </defs>
+
+
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey={dimensions[0]} />
           <YAxis />
@@ -31,7 +42,7 @@ const AreaChart: React.FC<AreaChartProps> = ({
           <Legend iconType="circle" />
 
           {metrics.map((metric, index) => (
-            <Area type="monotone" key={index} dataKey={metric} fill={colors[index % colors.length]} stroke={colors[index % colors.length]} />
+            <Area type="monotone" key={index} dataKey={metric} stroke={colors[index % colors.length]} fillOpacity={1} fill={`url(#color${index})`} />
           ))}
 
         </RAreaChart>
