@@ -1,7 +1,7 @@
 import React from "react";
 import { BubbleChartProps } from "./BubbleChart.types";
 import { CartesianGrid, Legend, Scatter, ResponsiveContainer, Tooltip, XAxis, YAxis, ScatterChart as RScatterChart, ZAxis } from "recharts";
-import { DivergentColorPallete } from "components/utils/DefaultParemeters";
+import { QualitativeColorPallete } from "components/utils/DefaultParemeters";
 
 const BubbleChart: React.FC<BubbleChartProps> = ({
   data,
@@ -10,7 +10,7 @@ const BubbleChart: React.FC<BubbleChartProps> = ({
   yKey: yDimension,
   dataKey,
   className = "w-full h-80",
-  colors = DivergentColorPallete,
+  colors = QualitativeColorPallete,
   ...props
 }) => {
   const range = [16, 225];

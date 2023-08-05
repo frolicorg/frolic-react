@@ -1,7 +1,7 @@
 import React from "react";
 import { PieChartProps } from "./PieChart.types";
 import { CartesianGrid, Legend, ResponsiveContainer, Tooltip, PieChart as RPieChart, Cell, Pie } from "recharts";
-import { DivergentColorPallete } from "components/utils/DefaultParemeters";
+import { QualitativeColorPallete } from "components/utils/DefaultParemeters";
 
 const PieChart: React.FC<PieChartProps> = ({
   data,
@@ -9,7 +9,7 @@ const PieChart: React.FC<PieChartProps> = ({
   dimensions,
   className = "w-full h-80",
   radius = 80,
-  colors = DivergentColorPallete,
+  colors = QualitativeColorPallete,
   ...props
 }) => {
   return (

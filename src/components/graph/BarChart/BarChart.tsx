@@ -1,14 +1,14 @@
 import React from "react";
 import { BarChartProps } from "./BarChart.types";
 import { CartesianGrid, Legend, Bar, ResponsiveContainer, Tooltip, XAxis, YAxis, BarChart as RBarChart } from "recharts";
-import { DivergentColorPallete } from "components/utils/DefaultParemeters";
+import { QualitativeColorPallete } from "components/utils/DefaultParemeters";
 
 const BarChart: React.FC<BarChartProps> = ({
   data,
   metrics,
   dimensions,
   className = "w-full h-80",
-  colors = DivergentColorPallete,
+  colors = QualitativeColorPallete,
   ...props
 }) => {
   return (

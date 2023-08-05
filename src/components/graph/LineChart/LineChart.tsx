@@ -1,14 +1,14 @@
 import React from "react";
 import { LineChartProps } from "./LineChart.types";
 import { CartesianGrid, Legend, Line, ResponsiveContainer, Tooltip, XAxis, YAxis, LineChart as RLineChart } from "recharts";
-import { DivergentColorPallete } from "components/utils/DefaultParemeters";
+import { QualitativeColorPallete } from "components/utils/DefaultParemeters";
 
 const LineChart: React.FC<LineChartProps> = ({
   data,
   metrics,
   dimensions,
   className = "w-full h-80",
-  colors = DivergentColorPallete,
+  colors = QualitativeColorPallete,
   ...props
 }) => {
   return (
@@ -31,7 +31,7 @@ const LineChart: React.FC<LineChartProps> = ({
 
           {metrics.map((metric, index) => (
             <>
-              <Line key={index} dataKey={metric} stroke={colors[index % colors.length]} activeDot={{ r: 4 }} />
+              <Line key={index} dataKey={metric} stroke={colors[index % colors.length]} strokeWidth={2} activeDot={{ r: 4 }} />
             </>
           ))}
 

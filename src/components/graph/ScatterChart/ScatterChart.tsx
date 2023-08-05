@@ -1,7 +1,7 @@
 import React from "react";
 import { ScatterChartProps } from "./ScatterChart.types";
 import { CartesianGrid, Legend, Scatter, ResponsiveContainer, Tooltip, XAxis, YAxis, ScatterChart as RScatterChart } from "recharts";
-import { DivergentColorPallete } from "components/utils/DefaultParemeters";
+import { QualitativeColorPallete } from "components/utils/DefaultParemeters";
 
 const ScatterChart: React.FC<ScatterChartProps> = ({
   data,
@@ -9,7 +9,7 @@ const ScatterChart: React.FC<ScatterChartProps> = ({
   xKey: xDimension,
   yKey: yDimension,
   className = "w-full h-80",
-  colors = DivergentColorPallete,
+  colors = QualitativeColorPallete,
   ...props
 }) => {
   return (

@@ -1,14 +1,14 @@
 import React from "react";
 import { AreaChartProps } from "./AreaChart.types";
 import { CartesianGrid, Legend, Area, ResponsiveContainer, Tooltip, XAxis, YAxis, AreaChart as RAreaChart } from "recharts";
-import { DivergentColorPallete } from "components/utils/DefaultParemeters";
+import { QualitativeColorPallete } from "components/utils/DefaultParemeters";
 
 const AreaChart: React.FC<AreaChartProps> = ({
   data,
   metrics,
   dimensions,
   className = "w-full h-80",
-  colors = DivergentColorPallete,
+  colors = QualitativeColorPallete,
   ...props
 }) => {
   return (
