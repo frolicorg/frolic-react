@@ -23,8 +23,6 @@ const AreaChart: React.FC<AreaChartProps> = ({
             bottom: 15,
           }}
         >
-
-
           <defs>
             {QualitativeColorPallete.map((color, index) => (
               <linearGradient key={index} id={`color${index}`} x1="0" y1="0" x2="0" y2="1">
@@ -33,7 +31,6 @@ const AreaChart: React.FC<AreaChartProps> = ({
               </linearGradient>
             ))}
           </defs>
-
 
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey={dimensions[0]} />
