@@ -5,7 +5,7 @@
 </a>
 </p>
 
-`frolic-react` is an open source react library to build UI for analytics dashboards much faster. You can use `frolic-react` directly with [frolic](https://github.com/frolicorg/frolic) backend service to create full stack dashboards 10x faster.
+`frolic-react` is an open source react library to build UI for analytics dashboards much faster. It is built on top of [react](https://react.dev), [tailwindcss](https://tailwindcss.com) and [recharts](https://recharts.org). You can use `frolic-react` directly with [frolic](https://github.com/frolicorg/frolic) backend service to create full stack dashboards 10x faster.
 
 ![GitHub contributors](https://img.shields.io/github/contributors/frolicorg/frolic-react)
 [![GitHub issues](https://img.shields.io/github/issues/frolicorg/frolic-react)](https://github.com/frolicorg/frolic-react/issues)
@@ -49,6 +49,8 @@ module.exports = {
 ## Usage
 
 ```js
+import { Card, LineChart, BarChart } from 'frolic-react'
+
 const data = [
     { name: 'Page A', uv: 4000, pv: 2400, amt: 2400 },
     { name: 'Page B', uv: 3000, pv: 1398, amt: 2210 }
@@ -56,7 +58,7 @@ const data = [
 
 const Page = () => {
   return (
-    <div className="h-96 flex flex-row gap-5">
+    <div className="grid grid-cols-2 gap-5">
       <Card title="Line Chart">
         <LineChart data={data} metrics={["uv", "pv", "amt"]} dimensions={["name"]}></LineChart>
       </Card>
