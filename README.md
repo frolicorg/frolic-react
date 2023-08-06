@@ -21,7 +21,12 @@
 ![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/tooljet/tooljet-ce)
 -->
 
-<img width="1187" alt="Screenshot 2023-08-03 at 2 55 45 PM" src="https://github.com/frolicorg/frolic-react/assets/15258498/ec41611f-071e-4700-8d12-7f96d059fdb1">
+
+<p align="center">
+<a href="">
+  <img style="border-radius: 10px;" width="730" alt="Area Chart" src="https://github.com/frolicorg/frolic-react/assets/15258498/5529e3ca-2d76-4ca9-b738-1889118c6c47">
+</a>
+</p>
 
 ## Installation
 
