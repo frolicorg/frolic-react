@@ -72,9 +72,9 @@ const Page = () => {
 export default Page;
 ```
 
-## Features
+## Components
 
-* Ready made components for all basic charts (e.g. `LineChart`, `BarChart`, etc). 
+Please refer to our [documentation](https://64cf50d65e63f6609ad6569e-jnacgivwdp.chromatic.com/?path=/docs/introduction--docs) which list all our components with their APIs.
 
 ## Integrations
 
