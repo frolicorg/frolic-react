@@ -7,12 +7,12 @@ import { Card } from "components/layout";
 
 const meta: Meta<typeof ScatterChart> = {
   component: ScatterChart,
-  title: "Graph/ScatterChart",
+  title: "Components/Graph/ScatterChart",
   argTypes: {},
 };
 export default meta;
 
-export const Primary: Story<ScatterChartProps> = (args: ScatterChartProps) => (
+export const Primary = (args: ScatterChartProps) => (
   <Card>
     <ScatterChart data-test-id="InputField-id" {...args} />
   </Card>

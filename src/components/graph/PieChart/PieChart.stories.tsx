@@ -7,12 +7,12 @@ import { Card } from "components/layout";
 
 const meta: Meta<typeof PieChart> = {
   component: PieChart,
-  title: "Graph/PieChart",
+  title: "Components/Graph/PieChart",
   argTypes: {},
 };
 export default meta;
 
-export const Primary: Story<PieChartProps> = (args: PieChartProps) => (
+export const Primary = (args: PieChartProps) => (
   <Card>
     <PieChart data-test-id="InputField-id" {...args} />
   </Card>

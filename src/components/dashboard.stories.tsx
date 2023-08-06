@@ -12,14 +12,12 @@ import BubbleChart from "./graph/BubbleChart/BubbleChart";
 import PieChart from "./graph/PieChart/PieChart";
 import { TestData } from "./utils/Test";
 
-const meta: Meta<typeof AreaChart> = {
-    component: AreaChart,
-    title: "Frolic/Dashboard",
-    argTypes: {},
+const meta: Meta = {
+    title: "Introduction/Sample Dashboard",
 };
 export default meta;
 
-export const Primary: Story<AreaChartProps> = (args: AreaChartProps) => (
+export const Primary = () => (
     <>
         <div className="flex flex-row gap-5">
             <Card title="Total Sales">
@@ -54,16 +52,9 @@ export const Primary: Story<AreaChartProps> = (args: AreaChartProps) => (
 
         <br></br>
         <div className="grid grid-cols-2 gap-5">
-            <Card title="Scatter Chart">
-                <ScatterChart data={TestData} xKey={"uv"} yKey={"pv"}></ScatterChart>
-            </Card>
             <Card title="Bubble Chart">
                 <BubbleChart data={TestData} xKey={"uv"} yKey={"pv"} dataKey={"amt"}></BubbleChart>
             </Card>
-        </div>
-
-        <br></br>
-        <div className="grid grid-cols-2 gap-5">
             <Card title="Pie Chart">
                 <PieChart data={TestData} metrics={["uv"]} dimensions={["name"]}></PieChart>
             </Card>

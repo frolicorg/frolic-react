@@ -7,12 +7,12 @@ import { Card } from "components/layout";
 
 const meta: Meta<typeof LineChart> = {
   component: LineChart,
-  title: "Graph/LineChart",
+  title: "Components/Graph/LineChart",
   argTypes: {},
 };
 export default meta;
 
-export const Primary: Story<LineChartProps> = (args: LineChartProps) => (
+export const Primary = (args: LineChartProps) => (
   <Card>
     <LineChart data-test-id="InputField-id" {...args} />
   </Card>

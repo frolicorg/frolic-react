@@ -1,4 +1,5 @@
 import '../src/styles.css'
+import { Preview } from '@storybook/react';
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },

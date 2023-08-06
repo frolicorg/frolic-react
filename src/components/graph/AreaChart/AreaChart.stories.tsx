@@ -7,12 +7,12 @@ import { Card } from "components/layout";
 
 const meta: Meta<typeof AreaChart> = {
   component: AreaChart,
-  title: "Graph/AreaChart",
+  title: "Components/Graph/AreaChart",
   argTypes: {},
 };
 export default meta;
 
-export const Primary: Story<AreaChartProps> = (args: AreaChartProps) => (
+export const Primary = (args: AreaChartProps) => (
   <Card>
     <AreaChart data-test-id="InputField-id" {...args} />
   </Card>

@@ -7,12 +7,12 @@ import { Card } from "components/layout";
 
 const meta: Meta<typeof BubbleChart> = {
   component: BubbleChart,
-  title: "Graph/BubbleChart",
+  title: "Components/Graph/BubbleChart",
   argTypes: {},
 };
 export default meta;
 
-export const Primary: Story<BubbleChartProps> = (args: BubbleChartProps) => (
+export const Primary = (args: BubbleChartProps) => (
   <Card>
     <BubbleChart data-test-id="InputField-id" {...args} />
   </Card>

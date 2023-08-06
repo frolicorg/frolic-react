@@ -5,12 +5,12 @@ import { CardProps } from "./Card.types";
 
 const meta: Meta<typeof Card> = {
   component: Card,
-  title: "Layout/Card",
+  title: "Components/Layout/Card",
   argTypes: {},
 };
 export default meta;
 
-export const Primary: Story<CardProps> = (args: CardProps) => (
+export const Primary = (args: CardProps) => (
   <Card data-test-id="InputField-id" {...args} />
 );
 

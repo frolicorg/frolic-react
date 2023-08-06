@@ -6,12 +6,12 @@ import { Card } from "components/layout";
 
 const meta: Meta<typeof MetricIncrement> = {
   component: MetricIncrement,
-  title: "Text/MetricIncrement",
+  title: "Components/Text/MetricIncrement",
   argTypes: {},
 };
 export default meta;
 
-export const Primary: Story<MetricIncrementProps> = (args: MetricIncrementProps) => (
+export const Primary = (args: MetricIncrementProps) => (
   <Card title="Metric Increment">
     <MetricIncrement data-test-id="InputField-id" {...args} />
   </Card>

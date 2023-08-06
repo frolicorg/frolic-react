@@ -1,0 +1,72 @@
+import {Meta} from "@storybook/blocks"
+
+<Meta title="Introduction" />
+
+# Introduction
+
+`frolic-react` is a react component library to build UI for analytics dashboards much faster. It is built on top of [react](https://react.dev), [tailwindcss](https://tailwindcss.com) and [recharts](https://recharts.org). 
+
+You can use frolic-react directly with [frolic](https://github.com/frolicorg/frolic) backend service to create full stack dashboards 10x faster.
+
+
+
+# Getting Started
+
+## Installation
+
+Follow the steps below to setup `frolic-react` in your project:
+
+### Install frolic-react
+
+```
+npm i frolic-react
+```
+ 
+### Configure frolic-react in your project
+
+In your `tailwind.config.js`, add the following code
+
+```
+module.exports = {
+  content: [
+    ...
+    'node_modules/frolic-react/**/*.{js,ts,jsx,tsx}',
+  ],
+  ...
+  plugins: [
+    require('frolic-react'),
+  ],
+}
+```
+
+### Add frolic-react to your components
+
+Add the following code to your component to add a Bar Chart.
+
+```tsx
+'use client'
+import { Card, BarChart } from 'frolic-react'
+
+export default function Home() {
+  const data = [
+    {
+      name: 'Page A',
+      uv: 4000,
+      pv: 2400,
+    },
+    {
+      name: 'Page B',
+      uv: 3000,
+      pv: 1398,
+    }
+  ];
+
+  return (
+    <>
+      <Card title='Bar Chart Sample'>
+        <BarChart data={data} dimensions={["name"]} metrics={["uv", "pv"]}></BarChart>
+      </Card>
+    </>
+  )
+}
+```

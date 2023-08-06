@@ -7,12 +7,12 @@ import { Card } from "components/layout";
 
 const meta: Meta<typeof BarChart> = {
   component: BarChart,
-  title: "Graph/BarChart",
+  title: "Components/Graph/BarChart",
   argTypes: {},
 };
 export default meta;
 
-export const Primary: Story<BarChartProps> = (args: BarChartProps) => (
+export const Primary = (args: BarChartProps) => (
   <Card>
     <BarChart data-test-id="InputField-id" {...args} />
   </Card>

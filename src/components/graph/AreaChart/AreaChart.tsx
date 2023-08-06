@@ -5,6 +5,10 @@ import { DefaultMargins, QualitativeColorPallete } from "components/utils/Defaul
 import { numericValueFormatter } from "components/utils/AxisFormatter";
 import { FrolicTooltip } from "components/utils/AxisFormatter";
 
+
+/**
+ * 
+ */
 const AreaChart: React.FC<AreaChartProps> = ({
   data,
   metrics,
