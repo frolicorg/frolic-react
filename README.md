@@ -1,7 +1,7 @@
 
 <p align="center">
 <a href="">
-  <img src="static/Frolic React Icon.png" alt="Frolic Logo" width="500">
+  <img src="public/Frolic React Icon.png" alt="Frolic Logo" width="500">
 </a>
 </p>
 

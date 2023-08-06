@@ -7,13 +7,16 @@
     "rollup": "rollup -c",
     "tests": "jest",
     "build-storybook": "storybook build",
-    "storybook": "storybook dev -p 6006"
+    "storybook": "storybook dev -p 6006",
+    "chromatic": "npx chromatic --project-token=chpt_0519ebd34582eed"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/frolicorg/frolic-react.git"
+    "url": "git+https://github.com/frolicorg/frolic-react.git"
   },
-  "author": "frolic",
+  "author": {
+    "name": "frolic"
+  },
   "license": "Apache 2.0",
   "bugs": {
     "url": "https://github.com/frolicorg/frolic-react/issues"
@@ -100,5 +103,7 @@
     "frolic",
     "dashboard",
     "tailwind"
-  ]
+  ],
+  "readme": "ERROR: No README data found!",
+  "_id": "frolic-react@1.0.9"
 }
