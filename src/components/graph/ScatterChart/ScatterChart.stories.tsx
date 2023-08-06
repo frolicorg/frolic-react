@@ -2,6 +2,8 @@ import React from "react";
 import { Meta, Story, StoryObj } from "@storybook/react";
 import ScatterChart from "./ScatterChart";
 import { ScatterChartProps } from "./ScatterChart.types";
+import { TestData } from "components/utils/Test";
+import { Card } from "components/layout";
 
 const meta: Meta<typeof ScatterChart> = {
   component: ScatterChart,
@@ -11,8 +13,13 @@ const meta: Meta<typeof ScatterChart> = {
 export default meta;
 
 export const Primary: Story<ScatterChartProps> = (args: ScatterChartProps) => (
-  <ScatterChart data-test-id="InputField-id" {...args} />
+  <Card>
+    <ScatterChart data-test-id="InputField-id" {...args} />
+  </Card>
 );
 
 Primary.args = {
+  data: TestData,
+  xKey: "uv",
+  yKey: "pv",
 };

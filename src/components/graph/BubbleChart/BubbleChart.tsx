@@ -6,10 +6,9 @@ import { FrolicTooltip, numericValueFormatter } from "components/utils/AxisForma
 
 const BubbleChart: React.FC<BubbleChartProps> = ({
   data,
-  metrics,
   xKey: xDimension,
   yKey: yDimension,
-  dataKey,
+  dataKey = "",
   className = "w-full h-80",
   colors = QualitativeColorPallete,
   margin = DefaultMargins,
@@ -56,10 +55,7 @@ const BubbleChart: React.FC<BubbleChartProps> = ({
           <ZAxis dataKey={dataKey} domain={domain} range={range} />
           <Tooltip content={<FrolicTooltip />} />
           <Legend iconType="circle" />
-
-          {metrics.map((metric, index) => (
-            <Scatter key={index} name={metric} dataKey={metric} fill={colors[index % colors.length]} />
-          ))}
+          <Scatter name={dataKey} dataKey={dataKey} fill={colors[0 % colors.length]} />
 
         </RScatterChart>
       </ResponsiveContainer>

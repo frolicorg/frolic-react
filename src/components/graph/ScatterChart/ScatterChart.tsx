@@ -6,9 +6,9 @@ import { FrolicTooltip, numericValueFormatter } from "components/utils/AxisForma
 
 const ScatterChart: React.FC<ScatterChartProps> = ({
   data,
-  metrics,
   xKey: xDimension,
   yKey: yDimension,
+  dataKey = "",
   className = "w-full h-80",
   colors = QualitativeColorPallete,
   margin = DefaultMargins,
@@ -27,9 +27,7 @@ const ScatterChart: React.FC<ScatterChartProps> = ({
           <Tooltip content={<FrolicTooltip />} />
           <Legend iconType="circle" />
 
-          {metrics.map((metric, index) => (
-            <Scatter key={index} name={metric} dataKey={metric} fill={colors[index % colors.length]} />
-          ))}
+          <Scatter name={dataKey} fill={colors[0 % colors.length]} />
 
         </RScatterChart>
       </ResponsiveContainer>

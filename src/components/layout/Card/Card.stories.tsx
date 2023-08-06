@@ -15,4 +15,5 @@ export const Primary: Story<CardProps> = (args: CardProps) => (
 );
 
 Primary.args = {
+  title: "Sample Card"
 };

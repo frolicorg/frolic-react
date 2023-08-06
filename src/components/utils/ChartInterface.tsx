@@ -9,9 +9,9 @@ export interface ChartInterface {
 
 export interface ScatterChartInterface {
     data: any[];
-    metrics: string[];
     xKey: string;
     yKey: string;
+    dataKey?: string;
     className?: string;
     colors?: string[];
     margin?: Margin;
