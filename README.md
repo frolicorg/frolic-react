@@ -24,7 +24,9 @@
 
 <p align="center">
 <a href="">
-  <img style="border-radius: 10px;" width="730" alt="Area Chart" src="https://github.com/frolicorg/frolic-react/assets/15258498/5529e3ca-2d76-4ca9-b738-1889118c6c47">
+
+<img width="700" alt="Screenshot 2023-08-07 at 10 37 48 PM" src="https://github.com/frolicorg/frolic-react/assets/15258498/808c5ea8-8371-445f-be27-539b089cd99c">
+  
 </a>
 </p>
 
