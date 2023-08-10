@@ -17,7 +17,7 @@ export interface ScatterChartInterface {
     margin?: Margin;
 }
 
-interface Margin {
+export interface Margin {
     top: number,
     left: number,
     right: number;

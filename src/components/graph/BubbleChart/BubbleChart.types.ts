@@ -1,4 +1,4 @@
-import { ScatterChartInterface } from "components/utils/ChartInterface";
+import { ScatterChartInterface } from "../../utils/ChartInterface";
 
 export interface BubbleChartProps extends ScatterChartInterface {
 

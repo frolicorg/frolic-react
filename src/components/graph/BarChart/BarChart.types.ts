@@ -1,4 +1,4 @@
-import { ChartInterface } from "components/utils/ChartInterface";
+import { ChartInterface } from "../../utils/ChartInterface";
 import { MouseEventHandler } from "react";
 
 export interface BarChartProps extends ChartInterface {

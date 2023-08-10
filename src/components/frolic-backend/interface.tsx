@@ -5,13 +5,16 @@ export interface FrolicResponse {
 export interface FrolicRequest {
     metrics?: Metric[],
     dimensions?: Dimension[],
-    filters?: Filter[]
+    filters?: Filter[],
+    orderby?: OrderBy,
+    limit?: number,
 }
 
 export interface Metric {
     field: string,
     aggregate_operator?: string,
-    name?: string
+    name?: string,
+    distinct?: boolean
 }
 
 export interface Dimension {
@@ -24,4 +27,9 @@ export interface Filter {
     dimension: Dimension,
     filter_operator: string,
     filter_value: string,
+}
+
+export interface OrderBy {
+    field: string[],
+    order: string
 }

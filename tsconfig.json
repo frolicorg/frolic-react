@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es2016",
+    "target": "es5",
     "rootDir": "src",
     "baseUrl": "src/",
     "esModuleInterop": true,

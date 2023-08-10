@@ -1,6 +1,6 @@
 {
   "name": "frolic-react",
-  "version": "1.0.10",
+  "version": "1.0.12",
   "description": "React Library to Build Analytics Dashboard 10x Faster",
   "scripts": {
     "prebuild": "rm -rf dist",
@@ -100,9 +100,10 @@
     "access": "public"
   },
   "keywords": [
-    "frolic",
     "dashboard",
-    "tailwind"
+    "tailwindcss",
+    "analytics",
+    "frolic"
   ],
   "readme": "ERROR: No README data found!",
   "_id": "frolic-react@1.0.9"
