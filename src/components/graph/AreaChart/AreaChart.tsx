@@ -13,6 +13,8 @@ const AreaChart: React.FC<AreaChartProps> = ({
   data,
   metrics,
   dimensions,
+  labelNames,
+  dimensionsNames,
   className = "w-full h-80",
   colors = QualitativeColorPallete,
   margin = DefaultMargins,

@@ -2,6 +2,8 @@ export interface ChartInterface {
     data: any[];
     dimensions: string[];
     metrics: string[];
+    labelNames: string[];
+    dimensionsName: string[];
     className?: string;
     colors?: string[];
     margin?: Margin;
