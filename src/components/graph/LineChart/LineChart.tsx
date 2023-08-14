@@ -8,6 +8,8 @@ const LineChart: React.FC<LineChartProps> = ({
   data,
   metrics,
   dimensions,
+  labelNames,
+  dimensionsNames,
   className = "w-full h-80",
   colors = QualitativeColorPallete,
   margin = DefaultMargins,
@@ -30,6 +32,27 @@ const LineChart: React.FC<LineChartProps> = ({
             <>
               <Line key={index} dataKey={metric} stroke={colors[index % colors.length]} strokeWidth={2} activeDot={{ r: 4 }} />
             </>
+          ))}
+
+          {dimensionsNames.map((dimensionName, index) => (
+            <Tooltip
+              key={index}
+              contentStyle={{ backgroundColor: "#fff", border: "1px solid #ccc" }}
+              formatter={(value, name, entry) => {
+                const customDimensionName = dimensionsNames && dimensionsNames[index]
+                  ? dimensionsNames[index]
+                  : name;
+                  const typedEntry = entry as any;
+                const customLabelName = labelNames && labelNames[index]
+                  ? labelNames[index]
+                  : typedEntry[dimensions[0]]; // Assuming the first dimension is used as the label
+
+                return [customDimensionName, customLabelName, value];
+              }}
+              labelFormatter={() => null}
+              separator=""
+              position={{ x: 0, y: 0 }}
+            />
           ))}
 
         </RLineChart>

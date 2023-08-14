@@ -46,7 +46,7 @@ const AreaChart: React.FC<AreaChartProps> = ({
             <Area type="monotone" key={index} dataKey={metric} stroke={colors[index % colors.length]} fillOpacity={1} fill={`url(#color${index})`} />
           ))}
 
-          {dimensions.map((dimension, index) => (
+          {dimensionsNames.map((dimension, index) => (
             <Tooltip
               key={index}
               contentStyle={{ backgroundColor: "#fff", border: "1px solid #ccc" }}
@@ -54,10 +54,10 @@ const AreaChart: React.FC<AreaChartProps> = ({
                 const customDimensionName = dimensionsNames && dimensionsNames[index]
                   ? dimensionsNames[index]
                   : name;
-
+                  const typedEntry = entry as any;
                 const customLabelName = labelNames && labelNames[index]
                   ? labelNames[index]
-                  : entry[dimensions[0]]; // Assuming the first dimension is used as the label
+                  : typedEntry[dimensionsNames[0]];
 
                 return [customDimensionName, customLabelName, value];
               }}
