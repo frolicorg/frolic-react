@@ -13,6 +13,8 @@ const AreaChart: React.FC<AreaChartProps> = ({
   data,
   metrics,
   dimensions,
+  labelNames,    
+  dimensionsNames,
   className = "w-full h-80",
   colors = QualitativeColorPallete,
   margin = DefaultMargins,
@@ -44,10 +46,29 @@ const AreaChart: React.FC<AreaChartProps> = ({
             <Area type="monotone" key={index} dataKey={metric} stroke={colors[index % colors.length]} fillOpacity={1} fill={`url(#color${index})`} />
           ))}
 
+          {dimensionsNames.map((dimension, index) => (
+            <Tooltip
+              key={index}
+              contentStyle={{ backgroundColor: "#fff", border: "1px solid #ccc" }}
+              formatter={(value, name, entry) => {
+                const customDimensionName = dimensionsNames && dimensionsNames[index]
+                  ? dimensionsNames[index]
+                  : name;
+                  const typedEntry = entry as any;
+                const customLabelName = labelNames && labelNames[index]
+                  ? labelNames[index]
+                  : typedEntry[dimensionsNames[0]];
+
+                return [customDimensionName, customLabelName, value];
+              }}
+              labelFormatter={() => null}
+              separator=""
+              position={{ x: 0, y: 0 }}
+            />
+          ))}
         </RAreaChart>
       </ResponsiveContainer>
     </div>
   );
 };
-
 export default AreaChart;

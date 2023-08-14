@@ -34,7 +34,7 @@ export const FrolicTooltip: React.FC<CustomTooltipProps> = ({ active, payload, l
                     </>
                 }
 
-                {payload.map((entry, index) => (
+                {payload.map((entry , index) => (
                     <div className='flex flex-row gap-1 items-center'>
                         <div className='w-1 h-4 rounded-sm' style={{ background: entry.color }}>
                         </div>

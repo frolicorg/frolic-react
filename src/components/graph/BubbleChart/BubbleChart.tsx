@@ -8,6 +8,8 @@ const BubbleChart: React.FC<BubbleChartProps> = ({
   data,
   xKey: xDimension,
   yKey: yDimension,
+  labelNames,
+  dimensionsNames,
   dataKey = "",
   className = "w-full h-80",
   colors = QualitativeColorPallete,
@@ -56,7 +58,26 @@ const BubbleChart: React.FC<BubbleChartProps> = ({
           <Tooltip content={<FrolicTooltip />} />
           <Legend iconType="circle" />
           <Scatter name={dataKey} dataKey={dataKey} fill={colors[0 % colors.length]} />
+          {dimensionsNames.map((dimensionName, index) => (
+            <Tooltip
+              key={index}
+              contentStyle={{ backgroundColor: "#fff", border: "1px solid #ccc" }}
+              formatter={(value, name, entry) => {
+                const customDimensionName = dimensionsNames && dimensionsNames[index]
+                  ? dimensionsNames[index]
+                  : name;
+                  const typedEntry = entry as any;
+                const customLabelName = labelNames && labelNames[index]
+                  ? labelNames[index]
+                  : typedEntry[dataKey]; // Assuming the dataKey is used as the label
 
+                return [customDimensionName, customLabelName, value];
+              }}
+              labelFormatter={() => null}
+              separator=""
+              position={{ x: 0, y: 0 }}
+            />
+          ))}
         </RScatterChart>
       </ResponsiveContainer>
     </div>
